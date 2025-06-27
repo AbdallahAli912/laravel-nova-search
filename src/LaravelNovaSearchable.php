@@ -88,13 +88,6 @@ trait LaravelNovaSearchable
         });
     }
 
-    /**
-     * Apply the concatenation column search query to the given query.
-     *
-     * @param  \Illuminate\Database\Eloquent\Builder  $query
-     * @param  string  $search
-     * @return \Illuminate\Database\Eloquent\Builder
-     */
     protected static function applyConcatenationColumnsSearch($query, $search)
     {
         $model = $query->getModel();
@@ -113,13 +106,7 @@ trait LaravelNovaSearchable
         return $query;
     }
 
-    /**
-     * Apply the concatenation column search query to the given query.
-     *
-     * @param  \Illuminate\Database\Eloquent\Builder  $query
-     * @param  string  $search
-     * @return \Illuminate\Database\Eloquent\Builder
-     */
+
     protected static function applyMatchingAnyColumnsSearch($query, $search)
     {
         $model = $query->getModel();
@@ -134,13 +121,7 @@ trait LaravelNovaSearchable
         return $query;
     }
 
-    /**
-     * Apply the relationship search query to the given query.
-     *
-     * @param  \Illuminate\Database\Eloquent\Builder  $query
-     * @param  string  $search
-     * @return \Illuminate\Database\Eloquent\Builder
-     */
+
     protected static function applyRelationSearch($query, $search)
     {
         foreach (static::searchableRelationsColumns() as $relation => $columns) {
@@ -171,13 +152,7 @@ trait LaravelNovaSearchable
         };
     }
 
-    /**
-     * Apply the relationship column concatenation search query to the given query.
-     *
-     * @param  \Illuminate\Database\Eloquent\Builder  $query
-     * @param  string  $search
-     * @return \Illuminate\Database\Eloquent\Builder
-     */
+
     protected static function applyRelationConcatenationColumnsSearch($query, $search)
     {
         foreach (static::searchableRelationsConcatenationColumns() as $relation => $columns) {
@@ -215,13 +190,7 @@ trait LaravelNovaSearchable
         };
     }
 
-    /**
-     * Apply the relationship matching any column search query to the given query.
-     *
-     * @param  \Illuminate\Database\Eloquent\Builder  $query
-     * @param  string  $search
-     * @return \Illuminate\Database\Eloquent\Builder
-     */
+
     protected static function applyRelationMatchingAnyColumnsSearch($query, $search)
     {
         foreach (static::searchableRelationsMatchingAnyColumns() as $relation => $columns) {
