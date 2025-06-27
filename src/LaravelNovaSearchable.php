@@ -75,14 +75,8 @@ trait LaravelNovaSearchable
         return static::$searchRelationsMatchingAny ?? [];
     }
 
-    /**
-     * Apply the search query to the query.
-     *
-     * @param  \Illuminate\Database\Eloquent\Builder  $query
-     * @param  string  $search
-     * @return \Illuminate\Database\Eloquent\Builder
-     */
-    protected static function applySearch(Builder $query, string $search): Builder
+
+    protected static function applySearch($query,$search)
     {
         return $query->where(function ($query) use ($search) {
             parent::applySearch($query, $search);
